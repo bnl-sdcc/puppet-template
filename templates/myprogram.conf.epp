@@ -1,0 +1,19 @@
+#
+# This is a generic conf file. 
+#
+# This will set the value to the class arg provided to init. 
+SOMECONFIGKEY = <%= $myprogram::str_something %>
+
+# You can also use any Facter fact, e.g. 
+# $hostname
+# $ipaddress
+# $fqdn 
+#  run 'facter' on a host to see the list of built-in facts. 
+
+EC2InstanceID = "<%= $ec2_instance_id %>"
+
+#
+# Or you can define a custom fact and use it:
+# See puppet-template/lib/facter/custom.rb 
+#
+MYPROGRAM_VERSION = <%= $some_program_version %>

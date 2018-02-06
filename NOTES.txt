@@ -1,0 +1,36 @@
+Template for SDCC-compatible Puppet modules. 
+
+
+Use cases/features. 
+
+General:
+-- specify RPM repo(s); both SDCC cobbler repos and/or external YUM repos. 
+-- specify RPMs to install
+-- works for master/slave within the facility, but also can be used in 
+   masterless mode.
+ 
+Variations:
+
+-- Config has some interpolation from locally accessible info (e.g. hostname). 
+-- Config comes from Puppet resource on Master, indexed by hostname.
+-- Custom Facter facts to collect and use non-standard info for interpolation. 
+
+
+Layout:
+
+/manifest     .pp Puppet code 
+/files        Files for placement unchanged on target system. 
+/templates    files with variables to be filled in by interpolation at runtime. 
+   .erb       Older Ruby-based template language.     
+   .epp       Newer Embedded Puppet Programming language. (Puppet 4+
+
+/lib/facter   .rb files that create custom Facter facts. 
+
+
+
+Workflow:
+
+-- check out template  
+  -- git clone https://github.com/bnl-sdcc/puppet-template.git
+  -- rm -rf puppet-template/.git 
+  
