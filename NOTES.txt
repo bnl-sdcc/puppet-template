@@ -28,9 +28,14 @@ Layout:
 
 
 
-Workflow:
+Workflow with local testing.
 
--- check out template  
+-- yum install puppet git
+
+-- check out template and disconnect.   
   -- git clone https://github.com/bnl-sdcc/puppet-template.git
   -- rm -rf puppet-template/.git 
+
+
+
   
