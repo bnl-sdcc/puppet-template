@@ -2,7 +2,7 @@
 # This is a generic conf file. 
 #
 # This will set the value to the class arg provided to init. 
-SOMECONFIGKEY = <%= $myprogram::str_something %>
+SOMECONFIGKEY = <%= $myclass::str_something %>
 
 # You can also use any Facter fact, e.g. 
 # $hostname
