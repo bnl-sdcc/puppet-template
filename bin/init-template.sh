@@ -1,14 +1,7 @@
 #!/bin/bash
-scriptdir=`dirname $0`
-echo $scriptdir
-srcdir=$scriptdir/..
-ls $srcdir
-echo "Raw srcdir is $srcdir"
-
-realsrc="$(dirname $(readlink -e $srcdir))/$(basename $srcdir)"
-echo "Real srcdir is $realsrc"
-srcdir=$realsrc
-
+scriptbin="$(cd "$(dirname "$0")"; pwd)/$(basename "$0")"
+dn=`dirname $scriptbin`
+srcdir=`dirname $dn` 
 devdir=/root/src/puppet/myclass
 
 echo "Cloning current catalog..."
