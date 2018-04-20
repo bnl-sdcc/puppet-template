@@ -3,6 +3,11 @@ scriptdir=`dirname $0`
 echo $scriptdir
 srcdir=$scriptdir/..
 ls $srcdir
+echo "Raw srcdir is $srcdir"
+
+realsrc="$(dirname $(readlink -e $srcdir))/$(basename $srcdir)"
+echo "Real srcdir is $realsrc"
+srcdir=$realsrc
 
 devdir=/root/src/puppet/myclass
 
