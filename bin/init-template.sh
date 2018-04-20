@@ -29,7 +29,7 @@ fi
 cp -f $srcdir/etc/puppet.conf /etc/puppet/puppet.conf
 
 echo "Setting up hiera and defaults.yaml..."
-cp -f $srcdir/etc/hiera.conf  /etc/puppet/hiera.conf
+cp -f $srcdir/etc/hiera.yaml  /etc/puppet/hiera.yaml
 if [ ! -f /etc/puppet/defaults.yaml ] ; then
     cp -f $srcdir/etc/defaults.yaml /etc/puppet/
 fi
