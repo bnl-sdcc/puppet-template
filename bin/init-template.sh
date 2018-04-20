@@ -28,7 +28,7 @@ if [ ! -f /etc/puppet/puppet.conf.backup ] ; then
 fi
 cp -f $srcdir/etc/puppet.conf /etc/puppet/puppet.conf
 
-echo "Setting up hiera and defaults.yaml..."
+echo "Setting up hiera and local.yaml..."
 cp -f $srcdir/etc/hiera.yaml  /etc/puppet/hiera.yaml
 if [ ! -f /etc/puppet/defaults.yaml ] ; then
     cp -f $srcdir/etc/defaults.yaml /etc/puppet/
