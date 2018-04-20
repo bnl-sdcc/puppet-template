@@ -1,7 +1,12 @@
 #!/bin/bash
+scriptdir=`dirname $0`
+echo $scriptdir
+ls $scriptdir/../manifests
+
+
+
 echo "Cloning current catalog..."
 cd /etc/puppet
-
 git clone https://webdocs.racf.bnl.gov/git/puppet/catalog
 
 if [ $? -eq 128 ]
