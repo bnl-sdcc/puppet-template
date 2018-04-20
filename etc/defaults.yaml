@@ -8,4 +8,4 @@
 classes:
   - myclass
 
-myprogram::str_something: 'myprogram-string-val'
+myclass::str_something: 'myclass-string-val'
