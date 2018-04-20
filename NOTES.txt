@@ -27,7 +27,6 @@ Layout:
 /lib/facter   .rb files that create custom Facter facts. 
 
 
-
 Workflow with local testing, e.g. on a cloud VM
 
 -- yum install puppet git
@@ -39,11 +38,13 @@ Workflow with local testing, e.g. on a cloud VM
 cd /etc/puppet
 git clone https://webdocs.racf.bnl.gov/git/puppet/catalog
 
-edit /etc/puppet/puppet.conf  
-
+cp /etc/puppet/puppet.conf /etc/puppet/puppet.conf.backup
+cp ~/puppet-template/etc/puppet.conf /etc/puppet/puppet.conf
+  
+cp ~/puppet-template/etc/test.pp /etc/puppet/test.pp
   
 
-
+puppet apply --verbose /etc/puppet/test.pp
 
 
   
