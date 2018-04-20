@@ -1,0 +1,11 @@
+#
+# Hiera defaults.yaml
+#
+# This is intended for configuration relevant to *any* node. 
+# Specialized configuration at build-time should go in local.yaml
+#
+
+classes:
+  - myclass
+
+myprogram::str_something: 'myprogram-string-val'

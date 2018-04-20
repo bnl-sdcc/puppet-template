@@ -1,0 +1,13 @@
+---
+:backends:
+  - yaml
+
+:yaml:
+  :datadir: /etc/hiera
+
+:merge_behavior:
+  - deeper
+  
+:hierarchy:
+   - local
+   - defaults

@@ -26,10 +26,18 @@ echo "Adjusting puppet.conf..."
 if [ ! -f /etc/puppet/puppet.conf.backup ] ; then
     cp -f /etc/puppet/puppet.conf /etc/puppet/puppet.conf.backup
 fi
+
 cp -f $srcdir/etc/puppet.conf /etc/puppet/puppet.conf
+cp -f $srcdir/etc/hiera.conf  /etc/puppet/hiera.conf
 
 echo "Creating test.pp..."  
 cp -f $srcdir/etc/test.pp /etc/puppet/test.pp
+
+if [ ! -f /etc/puppet/defaults.yaml ] ; then
+    cp -f $srcdir/etc/defaults.yaml /etc/puppet/
+fi
+
+
 
 
 echo "Run puppet apply --verbose /etc/puppet/test.pp"
