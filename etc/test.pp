@@ -1,2 +1,2 @@
 import "/etc/puppet/catalog/site.pp"
-include base
+include myclass

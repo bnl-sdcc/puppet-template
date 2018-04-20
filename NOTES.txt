@@ -34,17 +34,17 @@ Workflow with local testing, e.g. on a cloud VM
 -- check out template and disconnect:   
   -- git clone https://github.com/bnl-sdcc/puppet-template.git
   -- rm -rf puppet-template/.git 
-  
-cd /etc/puppet
-git clone https://webdocs.racf.bnl.gov/git/puppet/catalog
 
-cp /etc/puppet/puppet.conf /etc/puppet/puppet.conf.backup
-cp ~/puppet-template/etc/puppet.conf /etc/puppet/puppet.conf
-  
-cp ~/puppet-template/etc/test.pp /etc/puppet/test.pp
-  
+-- do template setup...
+cd ~/puppet-template/
+./bin/initialize-template.sh
+
+This script sets up local testing arrangement 
+ 
+
 
 puppet apply --verbose /etc/puppet/test.pp
+
 
 
   

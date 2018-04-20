@@ -21,7 +21,7 @@
 # Class definition with example argument/parameter types. 
 # Rename or comment out as needed....
 #
-class myclass ( $is_something = false,
+class myclass ( $is_something = true,
                 $str_something = 'default',
                 $n_something = 10,
                 $path_something = '/path/to/something',
