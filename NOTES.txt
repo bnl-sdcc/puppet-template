@@ -1,6 +1,5 @@
 Template for SDCC-compatible Puppet modules. 
 
-
 Use cases/features. 
 
 General:
@@ -10,11 +9,9 @@ General:
    masterless mode.
  
 Variations:
-
 -- Config has some interpolation from locally accessible info (e.g. hostname). 
 -- Config comes from Puppet resource on Master, indexed by hostname.
 -- Custom Facter facts to collect and use non-standard info for interpolation. 
-
 
 Layout:
 
@@ -26,22 +23,23 @@ Layout:
 
 /lib/facter   .rb files that create custom Facter facts. 
 
-
-Workflow with local testing, e.g. on a cloud VM
+Workflow with local testing, e.g. on a cloud VM. This assumes the user is working 
+as root. 
 
 -- yum install puppet git
 
 -- check out template and disconnect:   
   -- git clone https://github.com/bnl-sdcc/puppet-template.git
-  -- rm -rf puppet-template/.git 
+
 
 -- do template setup...
 cd ~/puppet-template/
-./bin/initialize-template.sh
+./bin/init-template.sh
 
-This script sets up local testing arrangement 
+This script sets up local testing arrangement, with a skeleton 'myclass' in 
+/root/src/puppet/myclass 
+
  
-
 puppet apply --verbose /etc/puppet/test.pp
 
 

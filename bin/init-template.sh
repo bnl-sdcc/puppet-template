@@ -1,9 +1,10 @@
 #!/bin/bash
 scriptdir=`dirname $0`
 echo $scriptdir
-ls $scriptdir/../manifests
+srcdir=$scriptdir/..
+ls $srcdir
 
-
+devdir=/root/src/puppet/myclass
 
 echo "Cloning current catalog..."
 cd /etc/puppet
@@ -16,12 +17,22 @@ then
    git pull
 fi
 
+echo "Setting up dev dir..."
+mkdir -p $devdir
+cp -vrn $srcdir/manifests $devdir/
+cp -vrn $srcdir/files $devdir/
+cp -vrn $srcdir/templates $devdir/
+cp -vrn $srcdir/lib $devdir/
+
 echo "Adjusting puppet.conf..."
-cp -f /etc/puppet/puppet.conf /etc/puppet/puppet.conf.backup
-cp -f ~/puppet-template/etc/puppet.conf /etc/puppet/puppet.conf
+if [ ! -f /etc/puppet/puppet.conf.backup ] ; then
+    cp -f /etc/puppet/puppet.conf /etc/puppet/puppet.conf.backup
+fi
+cp -f $srcdir/etc/puppet.conf /etc/puppet/puppet.conf
 
 echo "Creating test.pp..."  
-cp -f ~/puppet-template/etc/test.pp /etc/puppet/test.pp
+cp -f $srcdir/etc/test.pp /etc/puppet/test.pp
+
 
 echo "Run puppet apply --verbose /etc/puppet/test.pp"
 
