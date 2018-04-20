@@ -39,8 +39,11 @@ cd ~/puppet-template/
 This script sets up local testing arrangement, with a skeleton 'myclass' in 
 /root/src/puppet/myclass 
 
+This is the directory that, once working, should be put into the catalog...
+
+To test:
  
-puppet apply --verbose /etc/puppet/test.pp
+    puppet apply --verbose /etc/puppet/test.pp
 
 
 
