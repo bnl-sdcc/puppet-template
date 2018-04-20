@@ -10,5 +10,5 @@ cp -f ~/puppet-template/etc/puppet.conf /etc/puppet/puppet.conf
 echo "Creating test.pp..."  
 cp -f ~/puppet-template/etc/test.pp /etc/puppet/test.pp
 
-echo "Run puppet apply --verbose /etc/puppet/test.pp
+echo "Run puppet apply --verbose /etc/puppet/test.pp"
 
